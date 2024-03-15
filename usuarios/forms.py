@@ -18,6 +18,7 @@ class EditarPerfil(UserChangeForm):
     first_name = forms.CharField(label='Edite su nombre')
     last_name = forms.CharField(label='Edite su apellido')
     avatar = forms.ImageField(required=False)
+    fecha_ingreso = forms.DateField(required=False)
     
     class Meta:
         model = User

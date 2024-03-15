@@ -40,8 +40,10 @@ def editar(request):
         formulario = EditarPerfil(request.POST, request.FILES, instance=request.user)
         if formulario.is_valid():
             avatar = formulario.cleaned_data.get('avatar')
+            ingreso = formulario.cleaned_data.get('fecha_ingreso')
             if avatar:
                 datos_extras.avatar = avatar
+            datos_extras.fecha_ingreso = ingreso
             datos_extras.save()
             formulario.save()
             return redirect('perfil')
