@@ -1,0 +1,23 @@
+{% extends "inicio.html" %}
+
+{% block titulo %}
+        Editar Contraseña
+{% endblock titulo %}
+
+{% block header %}
+<h1 >Edicion de Contraseña</h1>
+{% endblock header %}
+
+
+{% block listado %}
+    
+    <form action="{% url "editar_contraseña" %}" method='POST'>
+        {% csrf_token %}
+        
+        <table>
+            {{form}}
+        </table>
+    <h1></h1>
+        <input type="submit", value='Guardar cambios'>
+    </form>
+{% endblock listado %}

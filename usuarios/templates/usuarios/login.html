@@ -1,0 +1,26 @@
+{% extends "inicio.html" %}
+
+{% block titulo %}
+        Iniciar Sesion
+{% endblock titulo %}
+
+{% block header %}
+<h1 >Inicio de sesion</h1>
+{% endblock header %}
+
+
+{% block listado %}
+    
+    <form action="{% url "login" %}" method='POST'>
+        {% csrf_token %}
+        
+        <table>
+            {{formulario}}
+        </table>
+    <h1></h1>
+        <input type="submit", value='Iniciar sesion'>
+    </form>
+    <p>No tienes una cuenta todavia? </p>
+    <a class= "btn btn-warning" href={% url "registro" %}>Registrate aqui</a>
+{% endblock listado %}
+

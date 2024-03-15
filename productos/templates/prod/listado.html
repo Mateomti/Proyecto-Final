@@ -1,0 +1,29 @@
+{% extends "inicio.html" %}
+
+{% block titulo %}
+Listado de productos
+{% endblock titulo %}
+
+{% block header %}
+<h1 >Listado de productos registrados</h1>
+{% endblock header %}
+
+
+{% block listado %}
+<a href={% url "registrar" %}>Registrar producto</a>
+
+    {% if  prod%}
+        <ul>
+            {% for p in prod%}
+            <li>
+                {{p   }} | <a href={% url "detalle" p.id %}>Ver</a>
+                    | <a href={% url "editar" p.id%}>Editar</a>
+                    | <a href={% url "eliminar" p.id%}>Eliminar</a>
+                    |
+            </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+    <p>No se han encontrado productos cargados.</p>
+    {% endif %}
+{% endblock listado %}

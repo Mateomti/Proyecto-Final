@@ -1,0 +1,24 @@
+{% extends "inicio.html" %}
+
+{% block titulo %}
+        Registro de productos
+{% endblock titulo %}
+
+{% block header %}
+<h1 >Registro de productos.</h1>
+{% endblock header %}
+
+
+{% block listado %}
+    
+    <form action="{% url "registrar" %}" method='POST'>
+        {% csrf_token %}
+
+        <table>
+            {{form}}
+        </table>
+    <h1></h1>
+        <input type="submit", value='Registrar'>
+    </form>
+{% endblock listado %}
+
