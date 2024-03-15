@@ -1,7 +1,7 @@
 {% extends "inicio.html" %}
 
 {% block titulo %}
-Listado de productos
+Entrega Final - Listado de productos
 {% endblock titulo %}
 
 {% block header %}
@@ -10,7 +10,12 @@ Listado de productos
 
 
 {% block listado %}
-<a href={% url "registrar" %}>Registrar producto</a>
+    
+    
+<form method="GET">
+    {{ form }}
+    <button type="submit">Buscar</button>
+</form>
 
     {% if  prod%}
         <ul>
@@ -22,6 +27,8 @@ Listado de productos
                     |
             </li>
             {% endfor %}
+    <a href={% url "registrar" %}>Registrar producto</a>
+
         </ul>
     {% else %}
     <p>No se han encontrado productos cargados.</p>

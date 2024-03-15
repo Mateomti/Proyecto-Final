@@ -1,7 +1,7 @@
 {% extends "inicio.html" %}
 
 {% block titulo %}
-        {{request.user}}
+Entrega Final - {{request.user}}
 {% endblock titulo %}
 
 {% block header %}
@@ -10,11 +10,19 @@
 
 
 {% block listado %}
+{% load static %}
+
     <ul>
+        <li>Avatar:</li>
+        {% if request.user.datosextras.avatar %}
+        <img src="{{ request.user.datosextras.avatar.url }}" alt="" height="175px">
+        {% else %}
+        <img src={% static 'assets/img/images.jpeg' %} alt="" height="100px">
+        {% endif %}
+
         <li>Nombre: {{request.user.first_name}}</li>
         <li>Apellido: {{request.user.last_name}}</li>
         <li>Email: {{request.user.email}}</li>
-        <li>Avatar: <img src={{request.user.datosextras.avatar.url}} alt="" height='100px'></li>
         <li>Fecha de ingreso del vendedor: {{request.user.datosextras.fecha_ingreso}}</li>
 
 

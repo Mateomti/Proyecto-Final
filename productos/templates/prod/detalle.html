@@ -1,7 +1,7 @@
 {% extends "inicio.html" %}
 
 {% block titulo %}
-        {{productos}}
+Entrega Final - {{productos}}
 {% endblock titulo %}
 
 {% block header %}
@@ -11,6 +11,8 @@
 
 {% block listado %}
     <ul>
+        <img src={{productos.imagen.url}} alt="" height="350px">
+
         <li>Marca: {{productos.marca}}</li>
         <li>Nombre: {{productos.nombre}}</li>
         <li>Fecha de vencimiento: {{productos.fecha_vencimiento}}</li>

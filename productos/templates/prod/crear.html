@@ -1,7 +1,7 @@
 {% extends "inicio.html" %}
 
 {% block titulo %}
-        Registro de productos
+Entrega Final - Registro de productos
 {% endblock titulo %}
 
 {% block header %}
@@ -11,7 +11,7 @@
 
 {% block listado %}
     
-    <form action="{% url "registrar" %}" method='POST'>
+    <form action="{% url "registrar" %}" method='POST' enctype='multipart/form-data'>
         {% csrf_token %}
 
         <table>

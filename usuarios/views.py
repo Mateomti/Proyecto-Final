@@ -5,6 +5,7 @@ from usuarios.forms import CreacionDeUsuario, EditarPerfil
 from django.contrib.auth.views import PasswordChangeView
 from django.urls import reverse_lazy
 from usuarios.models import DatosExtras
+
 def login(request):
     formulario = AuthenticationForm()
     
@@ -55,3 +56,6 @@ def editar(request):
 class EditarContraseña(PasswordChangeView):
     template_name = 'usuarios/editar_contraseña.html'
     success_url = reverse_lazy('perfil')
+
+def sobremi(request):
+    return render(request, 'usuarios/sobremi.html')
