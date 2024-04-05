@@ -6,7 +6,7 @@ from productos.models import Productos
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 from productos.forms import CrearProducto, BusquedaForm
-
+from django.contrib.auth.decorators import login_required
 
 
 
@@ -49,7 +49,7 @@ class Eliminar(LoginRequiredMixin, DeleteView):
     success_url = reverse_lazy('listado')
 
 class Editar(LoginRequiredMixin, UpdateView):
-    model = Productos
+    model = Productos   
     template_name = "prod/editar.html"
     success_url = reverse_lazy('listado')
     fields = ['marca', 'nombre', 'fecha_vencimiento', 'descripcion', 'imagen']

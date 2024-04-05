@@ -49,7 +49,7 @@ def editar(request):
             formulario.save()
             return redirect('perfil')
     else:
-        formulario = EditarPerfil(initial={'avatar':datos_extras.avatar}, instance=request.user)
+        formulario = EditarPerfil(initial={'avatar':datos_extras.avatar,'fecha_ingreso':datos_extras.fecha_ingreso}, instance=request.user)
         
     return render(request, 'usuarios/editar_perfil.html', {'formulario': formulario})
 

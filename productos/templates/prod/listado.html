@@ -27,10 +27,9 @@ Entrega Final - Listado de productos
                     |
             </li>
             {% endfor %}
-    <a href={% url "registrar" %}>Registrar producto</a>
-
         </ul>
     {% else %}
     <p>No se han encontrado productos cargados.</p>
     {% endif %}
+    <a href={% url "registrar" %}>Registrar producto</a>
 {% endblock listado %}
